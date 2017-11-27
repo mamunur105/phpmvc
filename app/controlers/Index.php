@@ -1,6 +1,6 @@
 <?php
 /**
-* mamun controller 
+* index controller 
 */
 class Index extends Dcontrolar
 { 
@@ -51,8 +51,6 @@ class Index extends Dcontrolar
 					$this->load->view("addcategory",$mess) ;
 			}
 		}
-
-
 
 }
 ?>	

@@ -16,8 +16,8 @@ if (isset($msg)) {
 			<td><input type ="text" name="name" required="1" /></td>
 		</tr>
 		<tr>
-			<td>tytle</td>
-			<td><input type ="text" name="title"required="1"/></td>
+			<td>title</td>
+			<td><input type ="text" name="title" required="1"/></td>
 		</tr>
 		<tr>
 			<td>====>>>>></td>

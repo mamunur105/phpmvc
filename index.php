@@ -1,8 +1,16 @@
 <?php 
-spl_autoload_register(function($class){
-include_once "system/libs/".$class.".php";
+// spl_autoload_register(function($class){
+// include_once "system/libs/".$class.".php";
 
-});
+// });
+include_once "system/libs/Dcontrolar.php";
+include_once "system/libs/Load.php";
+include_once "system/libs/Dmodel.php";
+include_once "system/libs/Database.php";
+
+
+
+// include_once "app/controlers/Mamun.php";
 
 ?>
 <?php
@@ -30,7 +38,7 @@ if (isset($url[0])) {
 	include "app/controlers/Index.php";
 	$ma = new Index();
 	$ma->home();
-	echo "6 no tutorial <br>" ;
+	echo "12 no tutorial <br>" ;
 }
 
 

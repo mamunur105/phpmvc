@@ -8,7 +8,7 @@ class Dmodel
 	
 	public function __construct() 
 	{		
-		$dsn = 'mysql:dbname=db_mvc;host=localhost';
+		$dsn = 'mysql:dbname=mvc;host=localhost';
 		$user ="root";
 		$pass ='';
 		$this->db = new Database($dsn,$user,$pass);

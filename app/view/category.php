@@ -4,9 +4,9 @@
 <h1>cat view </h1>
 <?php
 
-foreach ($cat as $kye => $value) {
+foreach ($category as  $value) {
 	
-	echo $value['id'].' ==> '.$value['name'].'<br>';
+	echo $value['category'].'<br>';
 }
 
 

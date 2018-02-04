@@ -6,7 +6,7 @@
 
 	
 foreach ($catid as $kye => $value) {
-	echo $value['id'].' ==> '.$value['name'].'<br>';
+	echo $value['id'].' ==> '.$value['category'].'<br>';
 }
 
 

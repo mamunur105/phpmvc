@@ -16,7 +16,7 @@ class Index extends Dcontrolar
 		$data = array();
 		$table= 'category';
 		$catmodel = $this->load->model("CatModel");
-		$data['cat']=$catmodel->catlist($table);	
+		$data['category']=$catmodel->catlist($table);	
 		$this->load->view("category",$data);
 	}
 	public function catById(){ 

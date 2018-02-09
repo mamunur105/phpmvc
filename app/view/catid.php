@@ -1,7 +1,7 @@
 <?php
 	include "inc/header.php";
 ?>
-<h1>cat view </h1>
+<h1>Cat  by id </h1>
 <?php
 
 	

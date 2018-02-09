@@ -5,9 +5,8 @@
 class Load 
 {
 	
-	function __construct()
-	{
-		# code...
+	function __construct(){
+		
 	}
 	public function view($filename,$data = false){
 

@@ -9,7 +9,7 @@ if (isset($msg)) {
 
 
 ?>
-<form action="http://localhost/php/phpmvc/Index/insertCategory" method="POST">
+<form action="http://localhost/phpmvc/Category/insertCategory" method="POST">
 	<table>
 		<tr>
 			<td>Name</td>

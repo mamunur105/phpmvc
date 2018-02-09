@@ -45,7 +45,7 @@ function backupDatabaseTables($dbHost,$dbUsername,$dbPassword,$dbName,$tables = 
                 $return .= "INSERT INTO $table VALUES(";
                 for($j=0; $j < $numColumns; $j++){
                     $row[$j] = addslashes($row[$j]);
-                    $row[$j] = ereg_replace("\n","\\n",$row[$j]);
+                    // $row[$j] = ereg_replace("\n","\\n",$row[$j]);
                     if (isset($row[$j])) { $return .= '"'.$row[$j].'"' ; } else { $return .= '""'; }
                     if ($j < ($numColumns-1)) { $return.= ','; }
                 }

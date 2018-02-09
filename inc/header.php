@@ -39,6 +39,6 @@ color: #000;
 	<div class="body">
 		<div class="Header">
 			<h1>This is Object oriented programming MVC</h1>
-			<h1><a href="//<?php echo $_SERVER['SERVER_NAME'];?>/php/phpmvc/backup.php">Db backup</a></h1>
+			<h1><a href="//<?php echo $_SERVER['SERVER_NAME'];?>/phpmvc/backup.php">Db backup</a></h1>
 		</div>
 		<div class="content">

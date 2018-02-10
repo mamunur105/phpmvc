@@ -23,6 +23,13 @@ class CatModel extends Dmodel
 		return $this->db->insert($table,$data);
 	}
 
+	public function catupdate($table,$data,$cond){
+		return $this->db->update($table,$data,$cond);
+	}
+
+
+	
+
 
 }
 

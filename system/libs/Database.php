@@ -29,15 +29,19 @@ class Database extends PDO
 	}
 	
 	public function update($table,$data,$cond){
-		// $keys = implode(",", array_keys($data)) ;
-		// $valus = ':'.implode(", :", array_keys($data)) ;
-		// $sql = "UPDATE  $table SET " ;
-		// $stmt = $this->prepare($sql);
+
 		$updatekeyes =  NULL ;
 		foreach ($data as $key => $value) {
-			$updatekeyes .= "$key=:$value,";
+			$updatekeyes .= "$key=:$key,";
+			 // $stmt->bindParam(":$key",$value);
+		}
+		$updatekeyes = rtrim($updatekeyes,",");
+		$sql = "UPDATE $table SET $updatekeyes WHERE $cond " ;
+		$stmt = $this->prepare($sql);
+		foreach ($data as $key => $value) {
 			 $stmt->bindParam(":$key",$value);
 		}
+		
 		return $stmt->execute();
 	}
 

@@ -49,4 +49,14 @@ class Category  extends Dcontrolar
 					$this->load->view("addcategory",$mess) ;
 		}
 	}
+	public function update(){
+		$table = "category" ;
+		$cond = "id=1" ;
+		$data = array(
+			'catname'=>"Cow",
+			'title'=>"Sell"
+		);
+		$catmodel = $this->load->model("CatModel") ;
+		$result = $catmodel->catupdate($table,$data,$cond);
+	}
 }

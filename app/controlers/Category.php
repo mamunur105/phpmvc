@@ -49,14 +49,42 @@ class Category  extends Dcontrolar
 					$this->load->view("addcategory",$mess) ;
 		}
 	}
-	public function update(){
+
+	public function  updateCategory(){
+		$data = array() ;
+		$table= 'category' ;
+		$id= 7 ;
+		$catmodel = $this->load->model("CatModel") ;
+		$data['catdatabyid']=$catmodel->catid($table,$id) ;	
+		$this->load->view("catupdate",$data) ;	 
+	}
+	public function updatecat(){
 		$table = "category" ;
-		$cond = "id=1" ;
+		
+		$id = $_POST['id'];
+		$name = $_POST['name'];
+		$title = $_POST['title'];
+		$cond = "id=$id" ;
 		$data = array(
-			'catname'=>"Cow",
-			'title'=>"Sell"
-		);
+				'catname'=>$name,
+				'title'=>$title
+			);
 		$catmodel = $this->load->model("CatModel") ;
 		$result = $catmodel->catupdate($table,$data,$cond);
+		$mess =array();
+		if ($result == 1) {
+			$mess['msg'] = "Category Updated Successfully......" ;
+		}else{
+			$mess['msg'] = "Category Not Updated ......" ;
+		}
+		$this->load->view("catupdate",$mess) ;
+	}
+
+
+	public function deleteCatbyId(){
+		$table = "category" ;
+		$cond = "id=8" ;
+		$catmodel = $this->load->model("CatModel") ;
+		$result = $catmodel->delCatbyId($table,$cond);
 	}
 }

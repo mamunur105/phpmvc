@@ -27,6 +27,10 @@ class CatModel extends Dmodel
 		return $this->db->update($table,$data,$cond);
 	}
 
+	public function delCatbyId($table,$cond){
+		return $this->db->delete($table,$cond);
+	}
+
 
 	
 

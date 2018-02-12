@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2018 at 09:06 PM
+-- Generation Time: Feb 12, 2018 at 04:36 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -39,14 +39,12 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `catname`, `title`) VALUES
-(1, 'php', ''),
 (2, 'java', ''),
 (3, 'GO', ''),
 (4, 'umbrella low cost', 'umbrella low cost'),
 (5, ' high cost', ' high cost'),
 (6, 'low cost', 'low cost'),
-(7, ' high cost', ' high cost'),
-(8, 'two', 'two');
+(7, ' high cost adfv adfbv ', ' high cost adfv adfbv ');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +64,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

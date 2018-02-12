@@ -32,7 +32,7 @@ if (isset($url[0])) {
 	include "app/controlers/Index.php";
 	$ma = new Index();
 	$ma->home();
-	echo "15 no tutorial <br>" ;
+	 
 }
 
 

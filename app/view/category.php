@@ -1,6 +1,6 @@
-<?php
-	include "inc/header.php";
-?>
+
+<?php include 'app/view/header.php' ; ?>
+
 <h1>Cat view </h1>
 <?php
 
@@ -11,5 +11,5 @@ foreach ($category as  $value) {
 
 
 ?>
+<?php include 'app/view/footer.php' ; ?>
 
-<?php include "inc/footer.php" ;?>

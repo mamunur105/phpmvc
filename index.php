@@ -1,7 +1,13 @@
 <?php 
 spl_autoload_register(function($class){
 	include_once "system/libs/".$class.".php";
-});?>
+});
+
+include "app/config/config.php";
+
+
+?>
+
 
 
 <?php
@@ -22,7 +28,6 @@ if (isset($url[0])) {
 	$ma = new $url[0]();
 	if (isset($url[2])) {
 		$ma->{$url[1]}($url[2]); 
-		// echo $url[1]. $url[2];
 	}else{
 		if (isset($url[1])) {
 			$ma->{$url[1]}(); 

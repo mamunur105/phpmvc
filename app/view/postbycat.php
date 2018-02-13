@@ -1,6 +1,6 @@
 
 	<div class="left-content fix">
-		<?php foreach ($allPost as $key => $value) { ?>
+		<?php foreach ($postByCat as $key => $value) { ?>
 
 			<article class="post">
 				<h1 class="title"><a href="<?php echo BASE_URL ;?>/Index/postDetails/<?php echo $value['id']?>">	<?php echo $value['title']?> </a></h1>
@@ -15,12 +15,10 @@
 
 				?> 
 				<p><a href="<?php echo BASE_URL ;?>/Index/postDetails/<?php echo $value['id']?>">load more.....</a></p>
-				<a href="<?php echo BASE_URL ;?>/Index/postByCat/<?php echo $value['cat']?>"><?php echo $value['cat']?> </a>
+				<?php echo $value['catname']?> 
 				<!-- <a href="#">cat one</a> -->
 			</article>
 
 		<?php  } ?>
 	</div>
 	
-
-

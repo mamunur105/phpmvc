@@ -1,6 +1,5 @@
-<?php
-	include "inc/header.php";
-?>
+<?php include 'app/view/header.php' ; ?>
+
 <h1>Cat  by id </h1>
 <?php
 
@@ -11,5 +10,4 @@ foreach ($catid as $kye => $value) {
 
 
 ?>
-
-<?php include "inc/footer.php" ;?>
+<?php include 'app/view/footer.php' ; ?>

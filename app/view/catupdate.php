@@ -1,6 +1,5 @@
-<?php
-	include "inc/header.php";
-?>
+<?php include 'app/view/header.php' ; ?>
+
 <h1>Update category </h1>
 <?php
 if (isset($msg)) {
@@ -37,4 +36,4 @@ if (isset($catdatabyid)) {
 	</table>
 </form>
 
-<?php include "inc/footer.php" ;?>
+<?php include 'app/view/footer.php' ; ?>

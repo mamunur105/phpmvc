@@ -31,6 +31,12 @@ class PostModel extends Dmodel
 		 	WHERE $tableCat.id = $id ";
 			return $this->db->select($sql);
 	}
+	function getLetestPost($table,$limit=4){
+
+		$sql ="SELECT * FROM $table ORDER BY id DESC LIMIT $limit";
+		return $this->db->select($sql);
+	}
+
 
 
 

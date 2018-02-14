@@ -85,6 +85,14 @@ color: #000;
 		padding: 10px 14px;
 		/*color: #fff ;*/
 	}
+	.search-form{}
+
+	.search-form input,
+	.search-form select{
+	  height: 40px;
+    max-width: 300px;
+    width: 100%;
+    line-height: 30px;}
 
 
 
@@ -94,17 +102,15 @@ color: #000;
 <body>
 	<div class="body">
 		<div class="Header">
-			<h1>Tutorial 23 </h1>
+			<h1>Tutorial 27  </h1>
 			<h1>This is Object oriented programming MVC</h1>
-			<h1><a href="//<?php echo $_SERVER['SERVER_NAME'];?>/phpmvc/backup.php">Db backup</a></h1>
+			<h1><a href="<?php echo BASE_URL ;?>/backup.php">Db backup</a></h1>
 		</div>
 		<div class="content">
 
 			<div class="wraper fix">
 				<div class="main-menu fix">
 					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Home</a></li>
+						<li><a href="<?php echo BASE_URL ;?>">Home</a></li>
 					</ul>
 				</div>

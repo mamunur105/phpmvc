@@ -1,6 +1,6 @@
 
 	<div class="left-content fix">
-		<?php foreach ($allPost as $key => $value) { ?>
+		<?php foreach ($postsearch as $key => $value) { ?>
 
 			<article class="post">
 				<h1 class="title"><a href="<?php echo BASE_URL ;?>/Index/postDetails/<?php echo $value['id']?>">	<?php echo $value['title']?> </a></h1>

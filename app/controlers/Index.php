@@ -10,6 +10,9 @@ class Index extends Dcontrolar
 		parent:: __construct();
 
 	}
+	public function Index(){
+		$this->home();
+	}
 	public function home(){
 		$data = array();
 		$table= 'post';
@@ -50,7 +53,7 @@ class Index extends Dcontrolar
 		$data['letestPost']=$postModel->getLetestPost($tablepost,$limit);
 
 		$this->load->view("header");
-		$this->load->view("search");
+		$this->load->view("search",$data);
 		$this->load->view("single-post",$data);
 		$this->load->view("sidebar",$data);
 		$this->load->view("footer");
@@ -81,16 +84,16 @@ class Index extends Dcontrolar
 		$data = array();
 		$tablepost= 'post';
 		$tableCat = 'category';
-		$kyeword =$REQUEST['kyeword'];
-		$catid =$REQUEST['catid'];
+		$kyeword = isset($_REQUEST['kyeword'])?$_REQUEST['kyeword']:"";
+		$catid =isset($_REQUEST['catid'])?$_REQUEST['catid']:"";
 
 
 		$postModel = $this->load->model("PostModel");
-		$data['postsearch']=$postModel->getPostByCat($tablepost,$kyeword,$catid);	
+		$data['postsearch']=$postModel->getPostBySearch($tablepost,$kyeword,$catid);	
 		// cat list 
 
 		$catModel = $this->load->model("CatModel");
-		$data['postsearch']=$catModel->catlist($tableCat);
+		$data['catlist']=$catModel->catlist($tableCat);
 		// letest post 
 		$limit = 5;
 		$data['letestPost']=$postModel->getLetestPost($tablepost,$limit);

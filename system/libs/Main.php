@@ -11,7 +11,9 @@ class Main
 	public $controlerPath = "app/controlers/";
 	public $contrler ;
 	public function __construct(){
-		# code...
+		$this->getUrl();
+		$this->loadControler();
+		$this->callMethod();
 	}
 
 	public function getUrl(){
@@ -38,18 +40,20 @@ class Main
 				if (class_exists($this->controlerName)) {
 					$this->contrler = new $this->controlerName();
 				}else{
-
+					header("Location:".BASE_URL."/Index");
 				}
+			}else{
+				header("Location:".BASE_URL."/Index");
 			}
 		}
 	}
 	public function callMethod(){
-		if(!isset($this->url[2])) {
+		if(isset($this->url[2])) {
 			$this->methodName = $this->url[1];
 			if (method_exists($this->contrler, $this->methodName)) {
 				$this->contrler->{$this->methodName}($this->url[2]);
 			}else{
-				header("Location:".BASE_URL."/Index")
+				header("Location:".BASE_URL."/Index");
 			}
 		}else{
 			if (isset($this->url[1])) {
@@ -57,14 +61,14 @@ class Main
 				if (method_exists($this->contrler, $this->methodName)) {
 					$this->contrler->{$this->methodName}();
 				}else{
-					header("Location:".BASE_URL."/Index")
+					header("Location:".BASE_URL."/Index");
 				}
 			}else{ 
 
 				if (method_exists($this->contrler, $this->methodName)) {
 					$this->contrler->{$this->methodName}();
 				}else{
-					header("Location:".BASE_URL."/Index")
+					header("Location:".BASE_URL."/Index");
 				}
 			}
 		}

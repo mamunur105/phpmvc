@@ -18,20 +18,22 @@
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading">Log in</div>
 				<div class="panel-body">
-					<form role="form">
+					<form role="form" action="<?php echo BASE_URL ;?>/Login/loginAuth/" method="POST">
 						<fieldset>
 							<div class="form-group">
-								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+								<input class="form-control" placeholder="E-mail" name="username" type="text" autofocus="">
 							</div>
 							<div class="form-group">
 								<input class="form-control" placeholder="Password" name="password" type="password" value="">
 							</div>
-							<div class="checkbox">
+							<!-- <div class="checkbox">
 								<label>
 									<input name="remember" type="checkbox" value="Remember Me">Remember Me
 								</label>
-							</div>
-							<a href="index.html" class="btn btn-primary">Login</a></fieldset>
+							</div> -->
+							<input name="submit" type="submit" value="Login">
+							<!-- <a href="index.html" class="btn btn-primary">Login</a> -->
+						</fieldset>
 					</form>
 				</div>
 			</div>

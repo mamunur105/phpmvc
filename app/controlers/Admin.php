@@ -10,10 +10,6 @@ class Admin extends Dcontrolar
 		parent::__construct();	
 	}
 
-	public function logIn(){
-		
-		$this->load->view("admin/login");
-		
-	}
+
 
 }

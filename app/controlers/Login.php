@@ -13,6 +13,10 @@ class Login extends Dcontrolar
 		$this->logIn();
 	}
 	public function logIn(){
+		Session::init();
+		if (Session::get('login') == true) {
+			header("Location:".BASE_URL."/Admin");
+		}
 		$this->load->view("admin/login");	
 	}
 
@@ -23,10 +27,24 @@ class Login extends Dcontrolar
 		$loginmodel = $this->load->model("LoginModel");
 		$count = $loginmodel->userControl($table,$username,$password);
 		if ($count > 0) {
+			$result = $loginmodel->getUserData($table,$username,$password);
+			Session::init();
+			Session::set("login",true);
+			Session::set("username",$result[0]['username']);
+			Session::set("userid",$result[0]['id']);
+			
+			header("Location:".BASE_URL."/Admin");
 			
 		}else{
 			header("Location:".BASE_URL."/Login");
 		}
+	}
+
+	public function logout(){
+		Session::init();
+		Session::destroy();
+		header("Location:".BASE_URL."/Login");
+
 	}
 
 }

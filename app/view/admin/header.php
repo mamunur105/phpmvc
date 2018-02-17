@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Dashboard</title>
+	<title> Dashboard</title>
 	<link href="<?php echo ADMIN_BASE_URL ;?>/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?php echo ADMIN_BASE_URL ;?>/css/font-awesome.min.css" rel="stylesheet">
 	<link href="<?php echo ADMIN_BASE_URL ;?>/css/datepicker3.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+				<a class="navbar-brand" href="<?php echo BASE_URL ;?>/Admin"><span>Lumino</span>Admin</a>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>

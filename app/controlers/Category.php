@@ -26,7 +26,7 @@ class Category  extends Dcontrolar
 		$this->load->view("catid",$data) ;	
 	}
 	public function  addCategory(){
-		$this->load->view("addcategory") ;
+		$this->load->view("admin/addcategory") ;
 	}
 	public function insertCategory(){
 		$table = "category" ;
@@ -46,7 +46,7 @@ class Category  extends Dcontrolar
 					}else{
 						$mess['msg'] = "Category Not Added ......" ;
 					}
-					$this->load->view("addcategory",$mess) ;
+					$this->load->view("admin/addcategory",$mess) ;
 		}
 	}
 

@@ -40,6 +40,7 @@ class Index extends Dcontrolar
 		
 		$data = array();
 		$tablepost= 'post';
+		// $id= 'id';
 		$tableCat = 'category';
 		$postModel = $this->load->model("PostModel");
 		$data['postDataByID']=$postModel->getPostByID($tablepost,$tableCat,$id);	

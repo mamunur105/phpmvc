@@ -27,8 +27,8 @@ if (isset($_GET['msg'])) {
 		<td><?php  echo $value['title']; ?></td>
 		<td>
 			<ul class="action">
-				<li><a href="<?php echo BASE_URL ;?>/Admin/updateCategory/<?php  echo $value['id']; ?>">EDIT</a></li>
-				<li><a href="<?php echo BASE_URL ;?>/Admin/deleteCatbyId/<?php  echo $value['id']; ?>">DELETE</a></li>
+				<li><a href="<?php echo BASE_URL ;?>/Admin/editCategory/<?php  echo $value['id']; ?>">EDIT</a></li>
+				<li><a onclick="return confirm('Are your sure to Delete ?')" href="<?php echo BASE_URL ;?>/Admin/deleteCatbyId/<?php  echo $value['id']; ?>">DELETE</a></li>
 			</ul>
 		</td>
 	</tr>

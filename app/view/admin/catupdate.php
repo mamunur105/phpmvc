@@ -9,9 +9,6 @@ if (isset($_GET['msg'])) {
 	 }
 }
 
-
-?>
-
 ?>
 <form action="<?php echo BASE_URL ;?>/Admin/updatecat" method="POST">
 	<table>

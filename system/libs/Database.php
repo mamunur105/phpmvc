@@ -24,7 +24,7 @@ class Database extends PDO
 		$sql = "INSERT INTO $table($keys) VALUES ($valus)" ;
 		$stmt = $this->prepare($sql);
 		foreach ($data as $key => $value) {
-			 $stmt->bindParam(":$key",$value);
+			 $stmt->bindValue(":$key",$value);
 		}
 		return $stmt->execute();
 	}
@@ -38,7 +38,7 @@ class Database extends PDO
 		$sql = "UPDATE $table SET $updatekeyes WHERE $cond " ;
 		$stmt = $this->prepare($sql);
 		foreach ($data as $key => $value) {
-			 $stmt->bindParam(":$key",$value);
+			 $stmt->bindValue(":$key",$value);
 		}
 		return $stmt->execute();
 	}

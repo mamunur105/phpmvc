@@ -50,10 +50,9 @@ class Category  extends Dcontrolar
 		}
 	}
 
-	public function  updateCategory(){
+	public function  editCategory($id=NULL){
 		$data = array() ;
 		$table= 'category' ;
-		$id= 7 ;
 		$catmodel = $this->load->model("CatModel") ;
 		$data['catdatabyid']=$catmodel->catid($table,$id) ;	
 		$this->load->view("catupdate",$data) ;	 
@@ -81,9 +80,9 @@ class Category  extends Dcontrolar
 	}
 
 
-	public function deleteCatbyId(){
+	public function deleteCatbyId($id=NULL){
 		$table = "category" ;
-		$cond = "id=8" ;
+		$cond = "id=$id" ;
 		$catmodel = $this->load->model("CatModel") ;
 		$result = $catmodel->delCatbyId($table,$cond);
 	}

@@ -18,23 +18,23 @@
 	</form>
 
 	<ul class="nav menu">
-		<li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+		<li class="active"><a href="<?php echo BASE_URL ;?>/Admin/"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 		<li><a href="<?php echo BASE_URL ;?>/Admin/addCategory"><em class="fa fa-calendar">&nbsp;</em> Add Category</a></li>
 		<li><a href="<?php echo BASE_URL ;?>/Admin/categoryList"><em class="fa fa-calendar">&nbsp;</em> Category List</a></li>
-		<li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
-		<li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
-		<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
+		<li><a href="<?php echo BASE_URL ;?>/Admin/"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
+		<li><a href="<?php echo BASE_URL ;?>/Admin/"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
+		<li><a href="<?php echo BASE_URL ;?>/Admin/"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 		<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 			<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 			</a>
 			<ul class="children collapse" id="sub-item-1">
-				<li><a class="" href="#">
+				<li><a class="" href="<?php echo BASE_URL ;?>/Admin/">
 					<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
 				</a></li>
-				<li><a class="" href="#">
+				<li><a class="" href="<?php echo BASE_URL ;?>/Admin/">
 					<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 2
 				</a></li>
-				<li><a class="" href="#">
+				<li><a class="" href="<?php echo BASE_URL ;?>/Admin/">
 					<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
 				</a></li>
 			</ul>

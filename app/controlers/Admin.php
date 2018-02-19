@@ -86,10 +86,9 @@ class Admin extends Dcontrolar
 		}
 	}
 
-	public function  updateCategory($a){
+	public function  editCategory($id=NULL){
 		$data = array() ;
 		$table= 'category' ;
-		$id= $a ;
 		$catmodel = $this->load->model("CatModel") ;
 		$data['catdatabyid']=$catmodel->catid($table,$id) ;	
 

@@ -27,27 +27,7 @@ class Admin extends Dcontrolar
 		$this->load->view("admin/addcategory") ;
 		$this->load->view('admin/footer');
 	}
-	// public function insertCategory(){
-	// 	$table = "category" ;
-
-	// 	if (isset($_POST['name']) && isset($_POST['title'])) {
-	// 			$name = $_POST['name'];
-	// 			$title = $_POST['title'];
-	// 			$data = array(
-	// 					'catname'=>$name,
-	// 					'title'=>$title
-	// 				);
-	// 			$catmodel = $this->load->model("CatModel") ;
-	// 			$result = $catmodel->insertcat($table,$data);
-	// 			$mess =array();
-	// 				if ($result == 1) {
-	// 					$mess['msg'] = "Category Added Successfully......" ;
-	// 				}else{
-	// 					$mess['msg'] = "Category Not Added ......" ;
-	// 				}
-	// 				$this->load->view("admin/addcategory",$mess) ;
-	// 	}
-	// }
+	
 
 	public function categoryList(){ 
 		$data = array();
@@ -121,7 +101,6 @@ class Admin extends Dcontrolar
 
 	}
 
-
 	public function deleteCatbyId($id){
 		$table = "category" ;
 		$cond = "id=$id" ;
@@ -134,6 +113,20 @@ class Admin extends Dcontrolar
 		}
 		$url = BASE_URL."/Admin/categoryList?msg=".urldecode(serialize($mess)) ;
 		header("Location:".$url);
+	}
+
+	public function addArticle(){
+		$data = array();
+		$table= 'category';
+		$catmodel = $this->load->model("CatModel");
+		$data['category']=$catmodel->catlist($table);	
+		
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view("admin/addpost",$data) ;
+		$this->load->view('admin/footer');
+	
+	
 	}
 
 

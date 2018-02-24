@@ -1,5 +1,5 @@
 
-	<script src="<?php echo ADMIN_BASE_URL ;?>/js/jquery-1.11.1.min.js"></script>
+
 	<script src="<?php echo ADMIN_BASE_URL ;?>/js/bootstrap.min.js"></script>
 	<script src="<?php echo ADMIN_BASE_URL ;?>/js/chart.min.js"></script>
 	<script src="<?php echo ADMIN_BASE_URL ;?>/js/chart-data.js"></script>
@@ -7,6 +7,7 @@
 	<script src="<?php echo ADMIN_BASE_URL ;?>/js/easypiechart-data.js"></script>
 	<script src="<?php echo ADMIN_BASE_URL ;?>/js/bootstrap-datepicker.js"></script>
 	<script src="<?php echo ADMIN_BASE_URL ;?>/js/custom.js"></script>
+
 	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
@@ -18,6 +19,9 @@
 	});
 };
 	</script>
+
+
+
 		
 </body>
 </html>

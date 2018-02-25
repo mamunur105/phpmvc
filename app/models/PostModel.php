@@ -13,6 +13,10 @@ class PostModel extends Dmodel
 		$sql ="SELECT * FROM $table ORDER BY id DESC LIMIT 3";
 		return $this->db->select($sql);
 	}
+	public function getPostlist($table){
+		$sql ="SELECT * FROM $table ORDER BY id DESC ";
+		return $this->db->select($sql);
+	}
 	public function getPostByID($tablepost,$tableCat,$id){
 		$sql ="SELECT $tablepost.*,$tableCat.catname FROM 
 			$tablepost INNER JOIN $tableCat

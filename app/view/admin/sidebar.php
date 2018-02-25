@@ -18,8 +18,9 @@
 	</form>
 
 	<ul class="nav menu">
-		<li class="active"><a href="<?php echo BASE_URL ;?>/Admin/"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-		<li><a href="<?php echo BASE_URL ;?>/Admin/addArticle"><em class="fa fa-calendar">&nbsp;</em> Add Post</a></li>
+		<li class="active_m"><a href="<?php echo BASE_URL ;?>/Admin/"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+		<li><a href="<?php echo BASE_URL ;?>/Admin/allPost"><em class="fa fa-calendar">&nbsp;</em>All Post </a></li>
+		<li><a href="<?php echo BASE_URL ;?>/Admin/newPost"><em class="fa fa-calendar">&nbsp;</em>Add New Post</a></li>
 		<li><a href="<?php echo BASE_URL ;?>/Admin/addCategory"><em class="fa fa-calendar">&nbsp;</em> Add Category</a></li>
 		<li><a href="<?php echo BASE_URL ;?>/Admin/categoryList"><em class="fa fa-calendar">&nbsp;</em> Category List</a></li>
 		<li><a href="<?php echo BASE_URL ;?>/Admin/"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>

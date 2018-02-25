@@ -115,18 +115,31 @@ class Admin extends Dcontrolar
 		header("Location:".$url);
 	}
 
-	public function addArticle(){
+	public function newPost(){
 		$data = array();
 		$table= 'category';
 		$catmodel = $this->load->model("CatModel");
-		$data['category']=$catmodel->catlist($table);	
-		
+		$data['category']=$catmodel->catlist($table);			
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view("admin/addpost",$data) ;
+		$this->load->view('admin/footer');	
+	}
+	public function allPost(){
+		$data = array();
+		$table= 'post';
+		$category = "category" ;
+		
+		$PostModel = $this->load->model("PostModel");
+		$data['allpost']=$PostModel->getPostlist($table);	
+		
+		$catmodel = $this->load->model("CatModel");
+		$data['category']=$catmodel->catlist($category);	
+
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view("admin/postlist",$data);
 		$this->load->view('admin/footer');
-	
-	
 	}
 
 

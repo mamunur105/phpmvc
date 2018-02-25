@@ -8,17 +8,17 @@ class Category  extends Dcontrolar
 	
 	function __construct(){
 		parent::__construct();
+		$data = array();
 	}
 
 	public function categoryList(){ 
-		$data = array();
+		
 		$table= 'category';
 		$catmodel = $this->load->model("CatModel");
 		$data['category']=$catmodel->catlist($table);	
 		$this->load->view("category",$data);
 	}
 	public function catById($a){ 
-		$data = array() ;
 		$table= 'category' ;
 		$id= $a ;
 		$catmodel = $this->load->model("CatModel") ;
@@ -51,7 +51,6 @@ class Category  extends Dcontrolar
 	}
 
 	public function  editCategory($id=NULL){
-		$data = array() ;
 		$table= 'category' ;
 		$catmodel = $this->load->model("CatModel") ;
 		$data['catdatabyid']=$catmodel->catid($table,$id) ;	
@@ -86,4 +85,5 @@ class Category  extends Dcontrolar
 		$catmodel = $this->load->model("CatModel") ;
 		$result = $catmodel->delCatbyId($table,$cond);
 	}
+	
 }

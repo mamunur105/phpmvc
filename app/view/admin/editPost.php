@@ -20,27 +20,37 @@
 		.content{height: 200px;		}
 	</style>
 	<div class="row " style="margin: 50px auto;">
-		<form action= "<?php echo BASE_URL ;?>/Admin/addPost" method="POST">
+		<form action= "<?php echo BASE_URL ;?>/Admin/upDatePost" method="POST">
+		
+<?php if (isset($Postdata)) {
+ foreach ( $Postdata as $value ) {?>
+
 		<div class="col-sm-7">
 			<label>Title</label><br>
-			<input class="title" type="text" name="title">
+			<input  type="hidden" name="id" value="<?php echo $value['id']?>">
+	<input class="title" type="text" name="title" value="<?php echo $value['title']?>">
 		</div>
 		<div class="col-sm-7">
 			<label>Content</label><br>
-			<textarea id="editor"  class="content" name="content"></textarea>
+			<textarea id="editor"  class="content" name="content"> <?php echo $value['content']?> </textarea>
 		</div>
 		<div class="col-sm-7">
 			<label>Category</label><br>
 			<select name="category">
-				<option value="">select</option>
-				<?php foreach ($category  as   $value) { ?>
-	
-				 	<option value="<?php echo $value['id']?>"><?php echo $value['catname']?></option>
+				<option >select</option>
+				<?php  if (isset($category)) { foreach ($category  as   $categoryvalue) { ?>
+					
+				<option <?php echo  $selected = ($value['cat'] == $categoryvalue['id']) ? 'selected' : ''; ; ?>  value="<?php echo $categoryvalue['id']?>"><?php echo $categoryvalue['catname']?></option>
 
-				<?php }	?>
+				<?php }} 	?>
 					 	
 			</select>
 		</div>
+
+<?php } } ?>
+
+
+
 		<div class="col-sm-7">
 			<input type="submit" value="Update" name="">
 		</div>

@@ -7,7 +7,6 @@ if (isset($msg)) {
 	echo $msg;
 }
 
-
 ?>
 
 		<form action="http://localhost/phpmvc/Admin/insertCategory" method="POST">

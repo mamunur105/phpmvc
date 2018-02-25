@@ -15,7 +15,7 @@
 
 				?> 
 				<p><a href="<?php echo BASE_URL ;?>/Index/postDetails/<?php echo $value['id']?>">load more.....</a></p>
-				<a href="<?php echo BASE_URL ;?>/Index/postByCat/<?php echo $value['cat']?>"><?php echo $value['cat']?> </a>
+				<a href="<?php echo BASE_URL ;?>/Index/postByCat/<?php echo $value['cat']?>"><?php echo $value['catname']?> </a>
 				<!-- <a href="#">cat one</a> -->
 			</article>
 

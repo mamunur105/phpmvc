@@ -9,9 +9,12 @@ class PostModel extends Dmodel
 	public function __construct(){
 		parent::__construct();
 	}
-	public function getAllPost($table){
-		$sql ="SELECT * FROM $table ORDER BY id DESC LIMIT 3";
+	public function getAllPost($tablepost,$tableCat){
+		$sql ="SELECT $tablepost.*,$tableCat.catname FROM 
+			$tablepost INNER JOIN $tableCat
+			ON  $tablepost.cat = $tableCat.id ORDER BY id DESC LIMIT 3 ";
 		return $this->db->select($sql);
+
 	}
 	public function getPostlist($table){
 		$sql ="SELECT * FROM $table ORDER BY id DESC ";
@@ -22,6 +25,12 @@ class PostModel extends Dmodel
 			$tablepost INNER JOIN $tableCat
 			ON  $tablepost.cat = $tableCat.id
 		 	WHERE $tablepost.id = $id ";
+			return $this->db->select($sql);
+	}
+	public function getPostWithCat($tablepost,$tableCat){
+		$sql ="SELECT $tablepost.*,$tableCat.catname FROM 
+			$tablepost INNER JOIN $tableCat
+			ON  $tablepost.cat = $tableCat.id ORDER By id";
 			return $this->db->select($sql);
 	}
 	public function getPostByCat($tablepost,$tableCat,$id){
@@ -49,13 +58,20 @@ class PostModel extends Dmodel
 		}
 		return $this->db->select($sql);
 	}
-
-
-
-
-
-
-
-
+	public function insertPost($table,$data){
+	 	return $this->db->insert($table,$data);
+	}
+	public function delPostbyId($table,$cond){
+		return $this->db->delete($table,$cond);
+	}
+	public function editPostbyId($table,$id){
+		$sql ="SELECT * FROM $table WHERE id=:id ";
+		$data = array(":id" =>$id);
+		return $this->db->select($sql,$data);
+	}
+	public function  postUpDated($table,$data,$cond){
+		return $this->db->update($table,$data,$cond);
+	}
 	
+
 }

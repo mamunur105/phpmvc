@@ -20,7 +20,7 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-		<script src="<?php echo ADMIN_BASE_URL ;?>/js/jquery-1.11.1.min.js"></script>
+	<script src="<?php echo ADMIN_BASE_URL ;?>/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">

@@ -8,18 +8,19 @@ class Index extends Dcontrolar
 	public function __construct()
 	{
 		parent:: __construct();
+		$data = array();
 
 	}
 	public function Index(){
 		$this->home();
 	}
 	public function home(){
-		$data = array();
+
 		$table= 'post';
 		$categorytable= 'category';
 		// all post show 
 		$postModel = $this->load->model("PostModel");
-		$data['allPost']=$postModel->getAllPost($table);
+		$data['allPost']=$postModel->getAllPost($table,$categorytable);
 
 		// cat list 
 
@@ -37,14 +38,12 @@ class Index extends Dcontrolar
 	}
 
 	public function postDetails($id){
-		
-		$data = array();
+
 		$tablepost= 'post';
 		// $id= 'id';
 		$tableCat = 'category';
 		$postModel = $this->load->model("PostModel");
 		$data['postDataByID']=$postModel->getPostByID($tablepost,$tableCat,$id);	
-
 		// cat list 
 
 		$catModel = $this->load->model("CatModel");
@@ -62,7 +61,6 @@ class Index extends Dcontrolar
 
 	public function postByCat($id){
 		
-		$data = array();
 		$tablepost= 'post';
 		$tableCat = 'category';
 		$postModel = $this->load->model("PostModel");
@@ -82,7 +80,7 @@ class Index extends Dcontrolar
 		$this->load->view("footer");
 	}
 	public function search(){
-		$data = array();
+
 		$tablepost= 'post';
 		$tableCat = 'category';
 		$kyeword = isset($_REQUEST['kyeword'])?$_REQUEST['kyeword']:"";

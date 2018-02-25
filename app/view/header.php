@@ -102,7 +102,7 @@ color: #000;
 <body>
 	<div class="body">
 		<div class="Header">
-			<h1>Tutorial 27  </h1>
+			<h1>Tutorial 40   </h1>
 			<h1>This is Object oriented programming MVC</h1>
 			<h1><a href="<?php echo BASE_URL ;?>/backup.php">Db backup</a></h1>
 		</div>

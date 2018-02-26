@@ -21,12 +21,11 @@ class Load
 		return new $modelname();
 	}
 
+	public function validation($calssname){
+		include 'app/validation/'.$calssname.'.php' ;
+		return new $calssname();
+	}
 
-
-
-
-
- 
 
 }
 

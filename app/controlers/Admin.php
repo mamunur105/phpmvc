@@ -197,10 +197,22 @@ class Admin extends Dcontrolar
 		$this->load->view('admin/footer');
 
 	}
-	public function upDatePost(){
+	public function upDatePost($id=NULL){
 		$table = "post" ;
-		if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['category'])) {
-				$id = $_POST['id'];
+		// if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['category'])) {
+		$input = $this->load->validation('DForm');
+		$input->post('title')
+			->isEmpty()
+			->length(3, 50);
+
+		$input->post('content')
+			->isEmpty();
+
+		$input->post('category')
+			->isCatEmpty();
+
+		if ($input->submit()) {
+				// $id = $_POST['id'];
 				$title = $_POST['title'];
 				$content = $_POST['content'];
 				$category = $_POST['category'];

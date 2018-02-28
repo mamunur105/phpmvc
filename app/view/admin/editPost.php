@@ -20,10 +20,11 @@
 		.content{height: 200px;		}
 	</style>
 	<div class="row " style="margin: 50px auto;">
-		<form action= "<?php echo BASE_URL ;?>/Admin/upDatePost" method="POST">
-		
 <?php if (isset($Postdata)) {
  foreach ( $Postdata as $value ) {?>
+
+		<form action= "<?php echo BASE_URL ;?>/Admin/upDatePost/<?php echo $value['id']?>" method="POST">
+		
 
 		<div class="col-sm-7">
 			<label>Title</label><br>
@@ -47,7 +48,6 @@
 			</select>
 		</div>
 
-<?php } } ?>
 
 
 
@@ -55,6 +55,8 @@
 			<input type="submit" value="Update" name="">
 		</div>
 		</form>
+<?php } } ?>
+
 	</div>
 
 </div>

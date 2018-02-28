@@ -132,29 +132,53 @@ class Admin extends Dcontrolar
 	}
 
 	public function addPost(){
+		if (!($_POST)) {
+			header("Location: ".BASE_URL."/Admin/newPost");
+		}
 		$table = "post" ;
-		if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['category'])) {
-				$title = $_POST['title'];
-				$content = $_POST['content'];
-				$category = $_POST['category'];
-				$data = array(
-						'content'=>$content,
-						'title'=>$title,
-						'cat'=>$category
-					);
-				$catmodel = $this->load->model("PostModel") ;
-				$result = $catmodel->insertPost($table,$data);
-				$mess =array();
+		// if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['category'])) {
+		$input = $this->load->validation('DForm');
+		$input->post('title')
+			->isEmpty()
+			->length(3, 50);
 
-				if ($result == 1) {
-					$mess['msg'] = "Post Added Successfully......" ;
-				}else{
-					$mess['msg'] = "Post Not Added ......" ;
-				}
+		$input->post('content')
+			->isEmpty();
 
-				$url = BASE_URL."/Admin/allPost?msg=".urldecode(serialize($mess)) ;
-				header("Location:".$url);
+		$input->post('category')
+			->isCatEmpty();
 
+		if ($input->submit()) {
+			$title = $_POST['title'];
+			$content = $_POST['content'];
+			$category = $_POST['category'];
+			$data = array(
+					'content'=>$content,
+					'title'=>$title,
+					'cat'=>$category
+				);
+			$catmodel = $this->load->model("PostModel") ;
+			$result = $catmodel->insertPost($table,$data);
+			$mess =array();
+
+			if ($result == 1) {
+				$mess['msg'] = "Post Added Successfully......" ;
+			}else{
+				$mess['msg'] = "Post Not Added ......" ;
+			}
+
+			$url = BASE_URL."/Admin/allPost?msg=".urldecode(serialize($mess)) ;
+			header("Location:".$url);
+		}else{
+
+			$data["posterror"]=$input->errors;
+			$table= 'category';
+			$catmodel = $this->load->model("CatModel");
+			$data['category']=$catmodel->catlist($table);			
+			$this->load->view('admin/header');
+			$this->load->view('admin/sidebar');
+			$this->load->view("admin/addpost",$data) ;
+			$this->load->view('admin/footer');
 		}
 	}
 	public function  editPost($id=NULL){

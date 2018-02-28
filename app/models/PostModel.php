@@ -30,7 +30,7 @@ class PostModel extends Dmodel
 	public function getPostWithCat($tablepost,$tableCat){
 		$sql ="SELECT $tablepost.*,$tableCat.catname FROM 
 			$tablepost INNER JOIN $tableCat
-			ON  $tablepost.cat = $tableCat.id ORDER By id";
+			ON  $tablepost.cat = $tableCat.id ORDER By id DESC ";
 			return $this->db->select($sql);
 	}
 	public function getPostByCat($tablepost,$tableCat,$id){

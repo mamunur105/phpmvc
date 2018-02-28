@@ -19,6 +19,32 @@
 		}
 		.content{height: 200px;		}
 	</style>
+<?php if (isset($posterror)) {
+	 foreach ($posterror as $key => $value) {
+	 	switch ($key) {
+	 		case 'title':
+	 			foreach ($value as $val ) {
+	 				echo "Title: ".$val."<br>";
+	 			}
+	 			break;
+	 		case 'content':
+	 			foreach ($value as $val ) {
+	 				echo "Content: ".$val."<br>";
+	 			}
+	 			break;
+	 		case 'category':
+	 			foreach ($value as $val ) {
+	 				echo "Category: ".$val."<br>";
+	 			}
+	 			break;
+	 		
+	 		default:
+	 			# code...
+	 			break;
+	 	}
+	 }
+}
+?>	
 	<div class="row " style="margin: 50px auto;">
 		<form action= "<?php echo BASE_URL ;?>/Admin/addPost" method="POST">
 		<div class="col-sm-7">

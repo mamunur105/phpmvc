@@ -19,7 +19,21 @@
 
 	<ul class="nav menu">
 		<li class="active_m"><a href="<?php echo BASE_URL ;?>/Admin/"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-		<li><a href="<?php echo BASE_URL ;?>/User/allUser"><em class="fa fa-clone">&nbsp;</em> User </a></li>
+		<?php if (Session::get('level') == 1) {?>
+		<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+			<em class="fa fa-navicon">&nbsp;</em> User <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+			</a>
+			<ul class="children collapse" id="sub-item-1">
+				<li><a class="" href="<?php echo BASE_URL ;?>/User/allUser">
+					<span class="fa fa-arrow-right">&nbsp;</span> All User
+				</a></li>
+				<li><a class="" href="<?php echo BASE_URL ;?>/User/makeUser">
+					<span class="fa fa-arrow-right">&nbsp;</span> Add New User
+				</a></li>
+				
+			</ul>
+		</li>
+		<?php } ?>
 		<li><a href="<?php echo BASE_URL ;?>/Admin/allPost"><em class="fa fa-calendar">&nbsp;</em>All Post </a></li>
 		<li><a href="<?php echo BASE_URL ;?>/Admin/newPost"><em class="fa fa-calendar">&nbsp;</em>Add New Post</a></li>
 		<li><a href="<?php echo BASE_URL ;?>/Admin/addCategory"><em class="fa fa-calendar">&nbsp;</em> Add Category</a></li>

@@ -28,8 +28,15 @@ if (isset($userdata)) {
 			<td><input type ="text" name="name" required="1" value="<?php echo $value['username']?>" /></td>
 		</tr>
 		<tr>
-			<td>title</td>
-			<td><input type ="text" name="level" required="1" value="<?php echo $value['level']?>"  /></td>
+			<td>Level</td>
+			<td>
+						<select name="level">
+							<option selected value="<?php echo $value['level']?>"><?php echo $value['level']?></option>
+							<option value="2"> Contributor </option>
+							<option value="3" > Subscriber </option>
+						</select>
+
+			</td>
 		</tr>
 		<tr>
 			<td>====>>>>></td>

@@ -149,9 +149,9 @@ class Admin extends Dcontrolar
 			->isCatEmpty();
 
 		if ($input->submit()) {
-			$title = $_POST['title'];
-			$content = $_POST['content'];
-			$category = $_POST['category'];
+			$title = $input->value['title'];
+			$content = $input->value['content'];
+			$category = $input->value['category'];
 			$data = array(
 					'content'=>$content,
 					'title'=>$title,

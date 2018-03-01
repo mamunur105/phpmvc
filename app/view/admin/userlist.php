@@ -29,13 +29,15 @@ if (isset($_GET['msg'])) {
 		<td> <?php  echo $i; ?></td>
 		<td> <?php  echo $value['username']; ?></td>
 		<td> <?php  echo $value['level']; ?></td>
-
-		<td>
-			<ul class="action">
-				<li><a href="<?php echo BASE_URL ;?>/User/editUser/<?php  echo $value['id']; ?>">EDIT</a></li>
-				<li><a onclick="return confirm('Are your sure to Delete ?')" href="<?php echo BASE_URL ;?>/User/deleteUserbyId/<?php  echo $value['id']; ?>">DELETE</a></li>
-			</ul>
-		</td>
+	
+		<?php if (Session::get('level') == 1) {?>
+			<td>
+				<ul class="action">
+					<li><a href="<?php echo BASE_URL ;?>/User/editUser/<?php  echo $value['id']; ?>">EDIT</a></li>
+					<li><a onclick="return confirm('Are your sure to Delete ?')" href="<?php echo BASE_URL ;?>/User/deleteUserbyId/<?php  echo $value['id']; ?>">DELETE</a></li>
+				</ul>
+			</td>
+		<?php }?>
 	</tr>
 
 <?php  endforeach; ?>

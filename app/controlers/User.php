@@ -11,10 +11,14 @@ class User extends Dcontrolar
 		$data = array();
 	}
 	public function Index(){
-		echo "home()";
+		$this->allUser();
 	}
 	public function makeUser(){
 		
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view("admin/makeuser");
+		$this->load->view('admin/footer');
 	}
 	public function allUser(){
 		$table= 'user';
@@ -35,14 +39,46 @@ class User extends Dcontrolar
 		$this->load->view("catid",$data) ;	
 	}
 	public function  addUser(){
-		$table= 'user';
-		$UserModel = $this->load->model("UserModel");
-		$data['userList']=$UserModel->userList($table);	
+		if (!($_POST)) {
+			header("Location:".BASE_URL."/User/makeUser");
+		}
+		$table = "user" ;
 
-		$this->load->view('admin/header');
-		$this->load->view('admin/sidebar');
-		$this->load->view("admin/addnewUser",$data);
-		$this->load->view('admin/footer');
+		$input = $this->load->validation('DForm');
+		$input->post('username');
+		$input->post('password');
+		$input->post('level');
+
+			$username = $input->value['username'];
+			$password = md5($input->value['password']);
+			$level = $input->value['level'];
+			$data = array(
+					'username'=>$username,
+					'password'=>$password,
+					'level'=>$level
+				);
+			
+			$UserModel = $this->load->model("UserModel") ;
+			$result = $UserModel->insertUser($table,$data);
+			$mess =array();
+
+			if ($result == 1) {
+				$mess['msg'] = "User Added Successfully......" ;
+			}else{
+				$mess['msg'] = "User Not Added ......" ;
+			}
+
+			$url = BASE_URL."/User/allUser?msg=".urldecode(serialize($mess)) ;
+			header("Location:".$url);
+
+		// $table= 'user';
+		// $UserModel = $this->load->model("UserModel");
+		// $data['userList']=$UserModel->userList($table);	
+
+		// $this->load->view('admin/header');
+		// $this->load->view('admin/sidebar');
+		// $this->load->view("admin/addnewUser",$data);
+		// $this->load->view('admin/footer');
 	}
 	// public function insertUser(){
 	// 	$table = "category" ;
@@ -106,9 +142,9 @@ class User extends Dcontrolar
 		$catmodel = $this->load->model("UserModel") ;
 		$result = $catmodel->delUserbyId($table,$cond);
 		if ($result == 1) {
-			$mess['msg'] = "Category Delete Successfully......" ;
+			$mess['msg'] = "User Delete Successfully......" ;
 		}else{
-			$mess['msg'] = "Category Not Delete ......" ;
+			$mess['msg'] = "User Not Delete ......" ;
 		}
 		$url = BASE_URL."/User/allUser?msg=".urldecode(serialize($mess)) ;
 		header("Location:".$url);

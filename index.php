@@ -1,12 +1,36 @@
 <?php 
-spl_autoload_register(function($class){
-	include_once "system/libs/".$class.".php";
-});
 
 include "app/config/config.php";
 
+spl_autoload_register(function($class){
 
 
+	$dirs = array(
+        'system/main/', // Project specific classes (+Core Overrides)
+        'system/libs/', // Core classes example
+    );
+
+
+	$locationOne = "system/libs/".$class.".php";
+	$locationTwo = "".$class.".php";
+
+	foreach( $dirs as $dir ) {
+        if (file_exists($dir.$class.'.php')) {
+            require_once($dir.$class.'.php');
+        }
+    }
+
+
+});
+
+// spl_autoload_register(function($class){
+// 	include_once "system/main/".$class.".php";
+// 	echo "$class";
+// });
+
+// foreach (glob('system/main/*.php') as $filename) {
+// 	require "$filename" ; 
+// }
 
 $main = new Main();
 
